@@ -79,7 +79,7 @@ begin
          end;
          if encypher then
             begin
-            r:=r+intToStr( (sn+kn) mod 9 )
+            r:=r+intToStr( (sn+kn) mod 10 )
             end
          else
              begin
