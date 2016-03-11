@@ -1,7 +1,7 @@
 object About_form: TAbout_form
-  Left = 825
+  Left = 824
   Height = 197
-  Top = 192
+  Top = 172
   Width = 320
   BorderStyle = bsDialog
   Caption = 'About'
@@ -15,13 +15,13 @@ object About_form: TAbout_form
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 0
-    Height = 50
+    Height = 75
     Top = 32
     Width = 320
     Alignment = taCenter
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 32
-    Caption = 'Digital One Time Pad'#10'Encoder/Decoder'
+    Caption = 'Digital One Time Pad'#10'Encoder/Decoder'#10'☭'
     Font.Height = -21
     ParentColor = False
     ParentFont = False
@@ -34,14 +34,16 @@ object About_form: TAbout_form
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 0
-    Height = 15
-    Top = 86
+    Height = 14
+    Top = 111
     Width = 320
     Alignment = taCenter
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 4
     Caption = 'KGB approved'
+    Font.Height = -11
     ParentColor = False
+    ParentFont = False
   end
   object Button1: TButton
     AnchorSideLeft.Control = Owner
@@ -50,10 +52,10 @@ object About_form: TAbout_form
     AnchorSideTop.Side = asrBottom
     Left = 101
     Height = 27
-    Top = 133
+    Top = 143
     Width = 118
     AutoSize = True
-    BorderSpacing.Top = 32
+    BorderSpacing.Top = 18
     Caption = 'YES, TOVAЯISHCH'
     OnClick = Button1Click
     TabOrder = 0

@@ -15,8 +15,8 @@ type
   Totp_form = class(TForm)
     Action1: TAction;
     ActionList1: TActionList;
-    Button1: TButton;
-    Button2: TButton;
+    encrypt_buton: TButton;
+    decrypt_button: TButton;
     file_menu: TMenuItem;
     edit_menu: TMenuItem;
     input_key: TMemo;
@@ -35,8 +35,8 @@ type
     tab_key: TTabSheet;
     tab_encrypt: TTabSheet;
     procedure Action1Execute(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    procedure encrypt_butonClick(Sender: TObject);
+    procedure decrypt_buttonClick(Sender: TObject);
     procedure file_menuClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure input_cipherChange(Sender: TObject);
@@ -84,14 +84,14 @@ begin
 
 end;
 
-procedure Totp_form.Button1Click(Sender: TObject);
-begin
-  Memo2.Text:=actions.Decipher(Memo1.Text,input_key.Text, false)
-end;
-
-procedure Totp_form.Button2Click(Sender: TObject);
+procedure Totp_form.encrypt_butonClick(Sender: TObject);
 begin
   Memo2.Text:=actions.Decipher(Memo1.Text,input_key.Text, true)
+end;
+
+procedure Totp_form.decrypt_buttonClick(Sender: TObject);
+begin
+  Memo2.Text:=actions.Decipher(Memo1.Text,input_key.Text, false)
 end;
 
 

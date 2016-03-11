@@ -12,6 +12,9 @@ function SpyGrouping(s:ansistring):ansistring;
 
 implementation
 
+const
+   encypherByAddition=True;
+
 procedure DoExit();
           begin
           Halt(0);
@@ -53,10 +56,11 @@ end;
 function Decipher(src:ansistring; key:ansistring; encypher:boolean):ansistring;
 var
    i:integer;       //loop counter
-   sn:integer;      //current source text number
-   kn:integer;      //current key number
+   sn:integer;      //current source text digit
+   kn:integer;      //current key digit
    r:ansistring=''; //result
 begin
+     encypher:=encypher and encypherByAddition;
      src:=ClearSpaces(src);
      key:=ClearSpaces(key);
    if length(src)> length(key) then
@@ -73,7 +77,7 @@ begin
          Except
            On E:EConvertError do
              begin
-             ShowMessage('Non-dight in input. Please check.'); //Newer shown,
+             ShowMessage('Non-digit symbol in input. Please check.'); //Newer shown,
              Decipher:='(''o'')';                              //but funny.
              exit;
              end;
@@ -88,6 +92,8 @@ begin
              r:=r+intToStr( mod10minus(sn,kn))
              end;
        end;
+   //if encypher then  ShowMessage('Encrypted');
+
    Decipher:=SpyGrouping(r);
 end;
 
