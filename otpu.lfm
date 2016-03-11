@@ -1,7 +1,7 @@
 object otp_form: Totp_form
-  Left = 339
+  Left = 76
   Height = 417
-  Top = 147
+  Top = 275
   Width = 577
   Caption = 'One Time Pad Encoder/Decoder'
   ClientHeight = 396
@@ -19,11 +19,11 @@ object otp_form: Totp_form
     Height = 355
     Top = 8
     Width = 561
-    ActivePage = tab_encrypt
+    ActivePage = tab_key
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 2
     BorderSpacing.Around = 8
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 0
     OnEnter = PageControl1Enter
     object tab_key: TTabSheet

@@ -48,6 +48,13 @@ begin
   ClearSpaces:=r
 end;
 
+function mod10minus(a:integer;b:integer):integer; //a-b
+begin
+     if b>a then a:=10+a;
+     //ShowMessage( inttostr( (a-b)mod 10) );
+     mod10minus:=(a-b) mod 10;
+end;
+
 function Decipher(src:ansistring; key:ansistring; encypher:boolean):ansistring;
 var
    i:integer;       //loop counter
@@ -83,7 +90,7 @@ begin
             end
          else
              begin
-             r:=r+intToStr( abs(sn-kn))
+             r:=r+intToStr( mod10minus(sn,kn))
              end;
        end;
    Decipher:=r;
