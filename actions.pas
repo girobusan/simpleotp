@@ -12,29 +12,25 @@ function SpyGrouping(s:ansistring):ansistring;
 
 implementation
 
-
-
 procedure DoExit();
           begin
           Halt(0);
           end;
 
-function SpyGrouping(s:ansistring):ansistring;
+function SpyGrouping(s:ansistring):ansistring; //Group them like a REAL spy!
 var
    r:ansistring='';
    i:integer;
-
 begin
      for i:=1 to (length(s)) do
          begin
          r:=r+s[i];
-         if ((i mod 5) = 0) and ( (i mod 25)<>0 ) then r:=r+' ';
-         if (i mod 25) = 0 then r:=r+sLineBreak
-         end;
-     SpyGrouping:=r
+         if ((i mod 5) = 0) then r:=r+' ';  //constants for sissies, anyway -
+         end;                               //ALL spies ALL the time group them by 5.
+     SpyGrouping:=r                         //
 end;
 
-function ClearSpaces(s:ansistring):ansistring;
+function ClearSpaces(s:ansistring):ansistring; //More than just spaces.
 var
    r:ansistring='';
    i:integer;
@@ -48,10 +44,9 @@ begin
   ClearSpaces:=r
 end;
 
-function mod10minus(a:integer;b:integer):integer; //a-b
+function mod10minus(a:integer;b:integer):integer; //a-b: it was harder, than expected
 begin
-     if b>a then a:=10+a;
-     //ShowMessage( inttostr( (a-b)mod 10) );
+     if b>a then a:=10+a;  //very problem specific
      mod10minus:=(a-b) mod 10;
 end;
 
@@ -78,8 +73,8 @@ begin
          Except
            On E:EConvertError do
              begin
-             ShowMessage('Non-dight in input. Please check.');
-             Decipher:='(''o'')';
+             ShowMessage('Non-dight in input. Please check.'); //Newer shown,
+             Decipher:='(''o'')';                              //but funny.
              exit;
              end;
 
@@ -93,7 +88,7 @@ begin
              r:=r+intToStr( mod10minus(sn,kn))
              end;
        end;
-   Decipher:=r;
+   Decipher:=SpyGrouping(r);
 end;
 
 end.
