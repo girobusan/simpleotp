@@ -1,0 +1,61 @@
+object About_form: TAbout_form
+  Left = 825
+  Height = 197
+  Top = 192
+  Width = 320
+  BorderStyle = bsDialog
+  Caption = 'About'
+  ClientHeight = 197
+  ClientWidth = 320
+  Position = poMainFormCenter
+  LCLVersion = '1.6.0.4'
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 0
+    Height = 50
+    Top = 32
+    Width = 320
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 32
+    Caption = 'Digital One Time Pad'#10'Encoder/Decoder'
+    Font.Height = -21
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label1Click
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 0
+    Height = 15
+    Top = 86
+    Width = 320
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    Caption = 'KGB approved'
+    ParentColor = False
+  end
+  object Button1: TButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Label2
+    AnchorSideTop.Side = asrBottom
+    Left = 101
+    Height = 27
+    Top = 133
+    Width = 118
+    AutoSize = True
+    BorderSpacing.Top = 32
+    Caption = 'YES, TOVAЯISHCH'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+end

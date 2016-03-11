@@ -1,0 +1,224 @@
+object otp_form: Totp_form
+  Left = 339
+  Height = 417
+  Top = 147
+  Width = 577
+  Caption = 'One Time Pad Encoder/Decoder'
+  ClientHeight = 396
+  ClientWidth = 577
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '1.6.0.4'
+  object PageControl1: TPageControl
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = StatusBar1
+    Left = 8
+    Height = 355
+    Top = 8
+    Width = 561
+    ActivePage = tab_encrypt
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 2
+    BorderSpacing.Around = 8
+    TabIndex = 1
+    TabOrder = 0
+    OnEnter = PageControl1Enter
+    object tab_key: TTabSheet
+      Caption = 'One time key'
+      ClientHeight = 322
+      ClientWidth = 555
+      OnEnter = tab_keyEnter
+      OnShow = tab_keyShow
+      object LWarning: TLabel
+        AnchorSideLeft.Control = tab_key
+        AnchorSideRight.Control = tab_key
+        AnchorSideRight.Side = asrBottom
+        Left = 16
+        Height = 15
+        Top = 11
+        Width = 523
+        Alignment = taCenter
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Around = 16
+        Caption = 'Warning! Always keep you one time keys separately!'
+        Color = clBackground
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+      end
+      object input_key: TMemo
+        AnchorSideLeft.Control = tab_key
+        AnchorSideTop.Control = LWarning
+        AnchorSideRight.Control = tab_key
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = tab_key
+        AnchorSideBottom.Side = asrBottom
+        Left = 16
+        Height = 271
+        Top = 35
+        Width = 523
+        Align = alCustom
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        BorderSpacing.Top = 8
+        BorderSpacing.Around = 16
+        Lines.Strings = (
+          ''
+        )
+        ScrollBars = ssAutoVertical
+        TabOrder = 0
+      end
+    end
+    object tab_encrypt: TTabSheet
+      Caption = 'Encrypt/decrypt'
+      ChildSizing.LeftRightSpacing = 16
+      ChildSizing.TopBottomSpacing = 16
+      ChildSizing.HorizontalSpacing = 16
+      ChildSizing.VerticalSpacing = 8
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 1
+      ClientHeight = 322
+      ClientWidth = 555
+      OnShow = tab_encryptShow
+      object Panel2: TPanel
+        AnchorSideLeft.Control = tab_encrypt
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = tab_encrypt
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = tab_encrypt
+        AnchorSideBottom.Side = asrBottom
+        Left = 16
+        Height = 50
+        Top = 256
+        Width = 523
+        Anchors = [akLeft, akRight, akBottom]
+        BorderSpacing.Top = 5
+        BorderSpacing.Bottom = 5
+        BorderSpacing.Around = 8
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 2
+        ClientHeight = 50
+        ClientWidth = 523
+        TabOrder = 1
+        object Button1: TButton
+          Left = 0
+          Height = 50
+          Top = 0
+          Width = 262
+          Caption = 'Encrypt'
+          OnClick = Button1Click
+          TabOrder = 0
+        end
+        object Button2: TButton
+          Left = 262
+          Height = 50
+          Top = 0
+          Width = 261
+          Caption = 'Decrypt'
+          OnClick = Button2Click
+          TabOrder = 1
+        end
+      end
+      object Panel1: TPanel
+        AnchorSideLeft.Control = tab_encrypt
+        AnchorSideRight.Control = tab_encrypt
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = Panel2
+        Left = 16
+        Height = 227
+        Top = 16
+        Width = 523
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        BevelOuter = bvNone
+        ChildSizing.VerticalSpacing = 8
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 227
+        ClientWidth = 523
+        TabOrder = 0
+        object Memo1: TMemo
+          Left = 0
+          Height = 110
+          Top = 0
+          Width = 523
+          Lines.Strings = (
+            'Encoded text goes here'
+          )
+          OnChange = Memo1Change
+          OnEnter = Memo1Enter
+          ScrollBars = ssAutoVertical
+          TabOrder = 0
+        end
+        object Memo2: TMemo
+          Left = 0
+          Height = 109
+          Top = 118
+          Width = 523
+          Color = clInfoBk
+          Lines.Strings = (
+            'Result will be shown here'
+          )
+          ReadOnly = True
+          ScrollBars = ssAutoVertical
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 373
+    Width = 577
+    BorderWidth = 1
+    Panels = <>
+  end
+  object MainMenu1: TMainMenu
+    left = 512
+    object file_menu: TMenuItem
+      Caption = 'File'
+      OnClick = file_menuClick
+      object menu_open: TMenuItem
+        Caption = 'Open encrypted message'
+        OnClick = menu_openClick
+      end
+      object menu_quit: TMenuItem
+        Caption = 'Quit'
+        OnClick = menu_quitClick
+      end
+    end
+    object edit_menu: TMenuItem
+      Caption = 'Edit'
+      object menu_about: TMenuItem
+        Caption = 'About'
+        OnClick = menu_aboutClick
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '.txt'
+    Filter = 'All files|*.*|Text files|*.txt'
+    FilterIndex = 2
+    Options = [ofReadOnly, ofEnableSizing, ofViewDetail]
+    left = 472
+  end
+  object ActionList1: TActionList
+    left = 400
+    object Action1: TAction
+      Caption = 'Action1'
+      OnExecute = Action1Execute
+    end
+  end
+end
