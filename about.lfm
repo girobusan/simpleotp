@@ -1,7 +1,7 @@
 object About_form: TAbout_form
-  Left = 824
+  Left = 1207
   Height = 197
-  Top = 172
+  Top = 153
   Width = 320
   BorderStyle = bsDialog
   Caption = 'About'
@@ -21,7 +21,7 @@ object About_form: TAbout_form
     Alignment = taCenter
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 32
-    Caption = 'Digital One Time Pad'#10'Encoder/Decoder'#10'☭'
+    Caption = 'Digital One Time Pad'#10'Cipher Tool'#10'☭'
     Font.Height = -21
     ParentColor = False
     ParentFont = False
