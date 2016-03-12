@@ -1,11 +1,13 @@
 object otp_form: Totp_form
-  Left = 571
+  Left = 570
   Height = 417
-  Top = 143
+  Top = 123
   Width = 577
   Caption = 'One Time Pad Cypher Tool'
   ClientHeight = 396
   ClientWidth = 577
+  Constraints.MinHeight = 400
+  Constraints.MinWidth = 400
   Menu = MainMenu1
   OnCreate = FormCreate
   LCLVersion = '1.6.0.4'
