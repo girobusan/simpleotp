@@ -1,6 +1,6 @@
 # 
-Simple OTP encoder/decoder
-==========================
+Simple OTP encrypter/decrypter
+==============================
 
 Made for educational purpose. Simple One-Time Pad encoder and decoder.
 
@@ -18,6 +18,8 @@ Encryption algorythms
 ---------------------
 
 There are two possibilitues: **encrypt message using modular addition,** and then decrypt using modular substraction, or **encrypt using substraction,** and decrypt using additions. The first one is default for this program (checked in Edit menu). 
+
+More in-depth info on one-time pad encryption here: http://users.telenet.be/d.rijmenants/en/onetimepad.htm
 
 
 
