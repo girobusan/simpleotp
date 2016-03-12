@@ -1,7 +1,7 @@
 object otp_form: Totp_form
-  Left = 702
+  Left = 701
   Height = 417
-  Top = 191
+  Top = 169
   Width = 577
   Caption = 'One Time Pad Encoder/Decoder'
   ClientHeight = 396
@@ -201,6 +201,13 @@ object otp_form: Totp_form
     end
     object edit_menu: TMenuItem
       Caption = 'Edit'
+      object enc_by_addition: TMenuItem
+        Caption = 'Encrypt by addition'
+        Checked = True
+        Hint = 'Click to change'
+        ShowAlwaysCheckable = True
+        OnClick = enc_by_additionClick
+      end
       object menu_about: TMenuItem
         Caption = 'About'
         OnClick = menu_aboutClick

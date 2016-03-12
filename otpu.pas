@@ -23,6 +23,7 @@ type
     LWarning: TLabel;
     Memo1: TMemo;
     Memo2: TMemo;
+    enc_by_addition: TMenuItem;
     menu_about: TMenuItem;
     menu_open: TMenuItem;
     menu_quit: TMenuItem;
@@ -37,6 +38,7 @@ type
     procedure Action1Execute(Sender: TObject);
     procedure encrypt_butonClick(Sender: TObject);
     procedure decrypt_buttonClick(Sender: TObject);
+    procedure enc_by_additionClick(Sender: TObject);
     procedure file_menuClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure input_cipherChange(Sender: TObject);
@@ -92,6 +94,14 @@ end;
 procedure Totp_form.decrypt_buttonClick(Sender: TObject);
 begin
   Memo2.Text:=actions.Decipher(Memo1.Text,input_key.Text, false)
+end;
+
+procedure Totp_form.enc_by_additionClick(Sender: TObject);
+begin
+      changeEncryptionType;
+      if isEncByAddition()then otp_form.enc_by_addition.Checked:=true
+      else otp_form.enc_by_addition.Checked:=false
+      //end;
 end;
 
 

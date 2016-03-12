@@ -7,18 +7,30 @@ interface
 uses
   Dialogs,Classes, SysUtils;
 procedure DoExit();
+procedure changeEncryptionType();
+function isEncByAddition():boolean;
 function Decipher(src:ansistring; key:ansistring; encypher:boolean):ansistring;
 function SpyGrouping(s:ansistring):ansistring;
 
+
 implementation
 
-const
-   encypherByAddition=True;
+var
+   encypherByAddition:boolean=True;
+
+procedure changeEncryptionType();
+begin
+       encypherByAddition:=not encypherByAddition
+   end;
 
 procedure DoExit();
           begin
           Halt(0);
           end;
+function isEncByAddition():boolean;
+begin
+   isEncByAddition:= encypherByAddition
+end;
 
 function SpyGrouping(s:ansistring):ansistring; //Group them like a REAL spy!
 var
