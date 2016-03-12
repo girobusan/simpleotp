@@ -68,6 +68,7 @@ object otp_form: Totp_form
         Lines.Strings = (
           ''
         )
+        OnChange = input_keyChange
         ScrollBars = ssAutoVertical
         TabOrder = 0
       end

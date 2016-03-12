@@ -42,6 +42,7 @@ type
     procedure file_menuClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure input_cipherChange(Sender: TObject);
+    procedure input_keyChange(Sender: TObject);
     procedure Memo1Change(Sender: TObject);
     procedure Memo1Enter(Sender: TObject);
     procedure menu_aboutClick(Sender: TObject);
@@ -64,6 +65,7 @@ type
 var
   otp_form: Totp_form;
   text_input_hint_seen:boolean=False;
+  key_entered:boolean=False;
 
 implementation
 
@@ -113,6 +115,11 @@ end;
 procedure Totp_form.input_cipherChange(Sender: TObject);
 begin
 
+end;
+
+procedure Totp_form.input_keyChange(Sender: TObject);
+begin
+  key_entered:=true
 end;
 
 procedure Totp_form.Memo1Change(Sender: TObject);
@@ -175,7 +182,9 @@ end;
 
 procedure Totp_form.tab_encryptShow(Sender: TObject);
 begin
-  StatusBar1.SimpleText:='Enter encoded text to encrypt or decrypt';
+  if key_entered then StatusBar1.SimpleText:='Enter encoded text to encrypt or decrypt'
+  else StatusBar1.SimpleText:='Warning: key wasn''t entered!'
+
 end;
 
 procedure Totp_form.tab_keyEnter(Sender: TObject);
