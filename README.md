@@ -4,7 +4,7 @@ Simple OTP encrypter/decrypter
 
 Made for educational purpose. Simple One-Time Pad encoder and decoder.
 
-(screenshot-0.1.png)
+![screenshot](screenshot-0.1.png)
 
 It cam encrypt or decrypt digitaly coded message using one time pad. You have to code your message before encryption (or after decryption) yourself (using good old staggererd chekerboard, for example). 
 
