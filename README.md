@@ -2,7 +2,7 @@
 Simple OTP encrypter/decrypter
 ==============================
 
-Made for educational purpose. Simple One-Time Pad encoder and decoder. If  you want one, you'd build it using Laszarus.
+Made for educational purpose. Simple One-Time Pad encoder and decoder. If  you want one, you'd build it using Lazarus.
 
 ![One Time Pad Cypher Tool](screenshot-0.1.png)
 
