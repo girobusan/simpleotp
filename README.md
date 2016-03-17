@@ -19,7 +19,7 @@ How it works
 Encryption algorythms
 ---------------------
 
-There are two possibilitues: **encrypt message using modular addition,** and then decrypt using modular substraction, or **encrypt using substraction,** and decrypt using additions. The first one is default for this program (checked in Edit menu). 
+There are two possibilities: **encrypt message using modular addition,** and then decrypt using modular substraction, or **encrypt using substraction,** and decrypt using addition. The first one is default for this program (checked in Edit menu). 
 
 ![Menu](screenshot_menu.png)
 
